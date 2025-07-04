@@ -1,8 +1,12 @@
 {
-  "welcome": "Welcome to Deokuli People",
-  "language": "Language",
-  "hindi": "Hindi",
-  "maithili": "Maithili",
-  "kaithi": "Kaithi",
-  "english": "English"
+  "app_title": "People of Deokuli",
+  "person_name": "Name",
+  "father_name": "Father's Name",
+  "mother_name": "Mother's Name",
+  "mother_village": "Mother's Village",
+  "alive": "Alive",
+  "marriage_village": "Marriage Village",
+  "alias_name": "Alias Name",
+  "wife1": "1st Wife",
+  "wife2": "2nd Wife"
 }

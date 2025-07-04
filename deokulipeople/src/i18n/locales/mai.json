@@ -1,4 +1,12 @@
 {
-  "welcome": "देओकुली लोक में अहाँक स्वागत अछि",
-  "language": "भाषा"
+  "app_title": "देवकुली धाम के लोक",
+  "person_name": "नाम",
+  "father_name": "पिताक नाम",
+  "mother_name": "मायक नाम",
+  "mother_village": "मायक गाम",
+  "alive": "जियैत छथि",
+  "marriage_village": "विवाह गाम",
+  "alias_name": "उपनाम",
+  "wife1": "पहिल पत्नी",
+  "wife2": "दोसर पत्नी"
 }

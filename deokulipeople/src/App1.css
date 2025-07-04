@@ -1,0 +1,76 @@
+.app-container {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.scroll-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.scroll-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.scroll-buttons button:hover {
+  background-color: #ddd;
+}
+
+.card-view {
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.generation-section {
+  margin-bottom: 2rem;
+}
+
+.sticky-generation {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  z-index: 2;
+}
+
+.generation-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Fixed size for PersonCard */
+.person-card {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

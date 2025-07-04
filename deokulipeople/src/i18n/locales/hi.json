@@ -1,4 +1,12 @@
 {
-  "welcome": "देवकुली धाम में आपका स्वागत है",
-  "language": "भाषा"
+  "app_title": "देवकुली धाम के लोग",
+  "person_name": "नाम",
+  "father_name": "पिता का नाम",
+  "mother_name": "माता का नाम",
+  "mother_village": "माता का गांव",
+  "alive": "जीवित हैं",
+  "marriage_village": "विवाह गांव",
+  "alias_name": "उपनाम",
+  "wife1": "पहली पत्नी",
+  "wife2": "दूसरी पत्नी"
 }
