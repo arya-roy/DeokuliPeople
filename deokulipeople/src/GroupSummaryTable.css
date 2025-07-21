@@ -1,0 +1,27 @@
+.group-summary-container {
+  padding: 20px;
+}
+
+.group-section h3 {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.group-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.group-table th,
+.group-table td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.group-table th {
+  background-color: #f9f9f9;
+}

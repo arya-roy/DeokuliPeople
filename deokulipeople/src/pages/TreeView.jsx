@@ -1,7 +1,9 @@
 // src/pages/TreeView.jsx
 import React, { useState, useEffect, useRef } from "react";
 import Tree from "react-d3-tree";
+import { useNavigate } from "react-router-dom";
 import peopleData from "../data/people.json";
+import CustomNode from "../components/CustomNode"; // ⬅️ Import it
 
 function TreeView() {
   const [treeData, setTreeData] = useState(null);
@@ -18,7 +20,6 @@ function TreeView() {
     const nameToIdMap = {};
     const roots = [];
 
-    // Step 1: Create all nodes
     peopleData.forEach((person) => {
       const node = {
         name: person["Name"] || "Unknown",
@@ -28,12 +29,12 @@ function TreeView() {
           Alive: person["Alive"] || "",
         },
         children: [],
+        _id: person["PersonID"],
       };
       idToNodeMap[person["PersonID"]] = node;
       nameToIdMap[person["Name"]] = person["PersonID"];
     });
 
-    // Step 2: Assign children
     peopleData.forEach((person) => {
       const fatherName = person["Father's Name"];
       const childId = person["PersonID"];
@@ -42,11 +43,10 @@ function TreeView() {
       if (fatherId && idToNodeMap[fatherId]) {
         idToNodeMap[fatherId].children.push(idToNodeMap[childId]);
       } else {
-        roots.push(idToNodeMap[childId]); // No valid father, so root node
+        roots.push(idToNodeMap[childId]);
       }
     });
 
-    // Step 3: Ensure valid root structure
     const finalTreeData =
       roots.length === 1
         ? roots[0]
@@ -65,14 +65,18 @@ function TreeView() {
     >
       {treeData && (
         <Tree
-          data={treeData}
-          translate={translate}
-          zoomable
-          zoom={0.75}
-          collapsible
-          orientation="vertical"
-          pathFunc="elbow"
-        />
+  data={treeData}
+  translate={translate}
+  zoomable
+  zoom={0.75}
+  collapsible
+  orientation="vertical"
+  pathFunc="step" // Try "step", "diagonal", or "straight"
+  nodeSize={{ x: 220, y: 120 }}
+  separation={{ siblings: 1.2, nonSiblings: 2 }}
+  renderCustomNodeElement={(rd3tProps) => <CustomNode {...rd3tProps} />}
+/>
+
       )}
     </div>
   );
