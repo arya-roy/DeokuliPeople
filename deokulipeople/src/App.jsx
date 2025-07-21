@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "./i18n/i18n.js";
 import peopleData from "./data/people.json";
+import deokuliAnerieyePeopleData from "./data/Deokuli_A_All.json";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
