@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import PeopleList from "./pages/PeopleList";
 import TreeView from "./pages/TreeView";
 import PersonDetail from "./pages/PersonDetail";
+import GroupDetailPage from "./pages/GroupDetailPage.jsx";
 import GroupSummary from "./pages/GroupSummary";
 import GroupPeopleList from "./pages/GroupPeopleList.jsx";
 import GroupSummaryTable from "./pages/GroupSummaryTable.jsx";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/list" element={<PeopleList />} />
         <Route path="/tree" element={<TreeView />} />
         <Route path="/person/:id" element={<PersonDetail />} />
+        <Route path="/group/:groupId" element={<GroupDetailPage />} />
         <Route path="/group/:groupName" element={<GroupSummary />} />
         <Route path="/group-people" element={<GroupPeopleList />} />
         <Route path="/group-summary-table" element={<GroupSummaryTable />} />

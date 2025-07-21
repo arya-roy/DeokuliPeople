@@ -1,5 +1,7 @@
 // src/pages/GroupSummaryTable.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { slugify } from "../utils/utils";
 
 const groupData = [
   // Paste your full dataset here as array of objects like:
@@ -156,7 +158,7 @@ const groupData = [
   {
     name: "Pandiji Jha",
     isBabhnaiye: true,
-    waasi: "",
+    waasi: "Dasaut",
     gotra: "",
     mool: "",
     total: 54,
@@ -402,7 +404,11 @@ const GroupSummaryTable = () => {
             <tbody>
               {aneriyeGroups.map((group, i) => (
                 <tr key={i}>
-                  <td>{group.name}</td>
+                  <td>
+                    <Link to={`/group/${slugify(group.name)}`} className="text-blue-600 hover:underline">
+                      {group.name}
+                    </Link>
+                  </td>
                   <td>{group.isBabhnaiye ? "Yes" : "No"}</td>
                   <td>{group.waasi || "-"}</td>
                   <td>{group.gotra || "-"}</td>
@@ -442,7 +448,11 @@ const GroupSummaryTable = () => {
             <tbody>
               {babhnaiyeGroups.map((group, i) => (
                 <tr key={i}>
-                  <td>{group.name}</td>
+                  <td>
+                    <Link to={`/group/${slugify(group.name)}`} className="text-blue-600 hover:underline">
+                      {group.name}
+                    </Link>
+                  </td>
                   <td>{group.isBabhnaiye ? "Yes" : "No"}</td>
                   <td>{group.waasi || "-"}</td>
                   <td>{group.gotra || "-"}</td>

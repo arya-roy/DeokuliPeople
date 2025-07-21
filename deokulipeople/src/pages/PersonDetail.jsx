@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import peopleData from "../data/people.json";
+import deokuliAnerieyePeopleData from "../data/Deokuli_A_All.json";
 
 const PersonDetail = () => {
   const { id } = useParams();
-  const person = peopleData.find((p) => String(p.PersonID) === id);
+  const person = deokuliAnerieyePeopleData.find((p) => String(p.PersonID) === id);
 
   if (!person) return <div>Person not found</div>;
 

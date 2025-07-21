@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Tree from "react-d3-tree";
 import { useNavigate } from "react-router-dom";
 import peopleData from "../data/people.json";
+import deokuliAnerieyePeopleData from "../data/Deokuli_A_All.json";
 import CustomNode from "../components/CustomNode"; // ⬅️ Import it
 
 function TreeView() {
@@ -20,12 +21,13 @@ function TreeView() {
     const nameToIdMap = {};
     const roots = [];
 
-    peopleData.forEach((person) => {
+    deokuliAnerieyePeopleData.forEach((person) => {
       const node = {
         name: person["Name"] || "Unknown",
         attributes: {
           "Father's Name": person["Father's Name"] || "",
           "Mother's Village": person["Mother's Village"] || "",
+          "Parent ID": person["ParentID"] || "99",
           Alive: person["Alive"] || "",
         },
         children: [],
@@ -35,10 +37,10 @@ function TreeView() {
       nameToIdMap[person["Name"]] = person["PersonID"];
     });
 
-    peopleData.forEach((person) => {
+    deokuliAnerieyePeopleData.forEach((person) => {
       const fatherName = person["Father's Name"];
       const childId = person["PersonID"];
-      const fatherId = nameToIdMap[fatherName];
+      const fatherId = person["ParentID"];
 
       if (fatherId && idToNodeMap[fatherId]) {
         idToNodeMap[fatherId].children.push(idToNodeMap[childId]);
