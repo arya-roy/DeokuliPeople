@@ -33,5 +33,16 @@
   "glimpses": "🏞️ Glimpses of Deokuli Dham",
   "peopleList": {
     "title": "📋 People List"
+  },
+  "personDetail": {
+    "notFound": "Person not found",
+    "father": "Father",
+    "mother": "Mother",
+    "motherVillage": "Mother's Village",
+    "alive": "Alive",
+    "marriageVillage": "Marriage Village",
+    "alias": "Alias Name",
+    "firstWife": "1st Wife",
+    "secondWife": "2nd Wife"
   }
 }

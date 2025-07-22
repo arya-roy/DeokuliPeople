@@ -18,9 +18,9 @@ const CustomNode = ({ nodeDatum, toggleNode }) => {
       {/* Clickable Name */}
       <text
         x={0}
-        y={-30}
+        y={-50}
         textAnchor="middle"
-        fontSize={12}
+        fontSize={24}
         fill="blue"
         style={{ cursor: "pointer", textDecoration: "underline" }}
         onClick={handleClick}

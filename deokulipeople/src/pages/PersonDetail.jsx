@@ -1,27 +1,42 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import peopleData from "../data/people.json";
-import deokuliAnerieyePeopleData from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+
+import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+//import deokuliAnerieyePeopleData_kaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
+
+import { useTranslation } from "react-i18next";
 
 const PersonDetail = () => {
+  const { t, i18n } = useTranslation();
   const { id } = useParams();
-  const person = deokuliAnerieyePeopleData.find((p) => String(p.PersonID) === id);
 
-  if (!person) return <div>Person not found</div>;
+  // Choose dataset based on selected language
+  let peopleData = deokuliAnerieyePeopleData_en;
+  if (i18n.language === "hi") {
+    peopleData = deokuliAnerieyePeopleData_hi;
+  } else if (i18n.language === "kaithi") {
+    peopleData = deokuliAnerieyePeopleData_hi;
+  } else if (i18n.language === "mai") {
+    peopleData = deokuliAnerieyePeopleData_hi; // fallback to Hindi for Maithili
+  }
+
+  const person = peopleData.find((p) => String(p.PersonID) === id);
+
+  if (!person) return <div>{t("personDetail.notFound")}</div>;
 
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">{person.Name}</h2>
       <ul className="space-y-1">
-        <li><strong>Father:</strong> {person["Father's Name"]}</li>
-        <li><strong>Mother:</strong> {person["Mother's Name"]}</li>
-        <li><strong>Mother's Village:</strong> {person["Mother's Village"]}</li>
-        <li><strong>Alive:</strong> {person.Alive}</li>
-        <li><strong>Marriage Village:</strong> {person["Marriage village"]}</li>
-        <li><strong>Alias Name:</strong> {person["Alias Name"]}</li>
-        <li><strong>1st Wife:</strong> {person["1st wife"]}</li>
-        <li><strong>2nd Wife:</strong> {person["2nd Wife"]}</li>
+        <li><strong>{t("personDetail.father")}:</strong> {person["Father's Name"]}</li>
+        <li><strong>{t("personDetail.mother")}:</strong> {person["Mother's Name"]}</li>
+        <li><strong>{t("personDetail.motherVillage")}:</strong> {person["Mother's Village"]}</li>
+        <li><strong>{t("personDetail.alive")}:</strong> {person.Alive}</li>
+        <li><strong>{t("personDetail.marriageVillage")}:</strong> {person["Marriage village"]}</li>
+        <li><strong>{t("personDetail.alias")}:</strong> {person["Alias Name"]}</li>
+        <li><strong>{t("personDetail.firstWife")}:</strong> {person["1st wife"]}</li>
+        <li><strong>{t("personDetail.secondWife")}:</strong> {person["2nd Wife"]}</li>
       </ul>
     </div>
   );

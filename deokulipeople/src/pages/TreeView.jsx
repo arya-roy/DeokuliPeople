@@ -1,17 +1,31 @@
 // src/pages/TreeView.jsx
 import React, { useState, useEffect, useRef } from "react";
 import Tree from "react-d3-tree";
-import { useNavigate } from "react-router-dom";
-import peopleData from "../data/people.json";
+import { useTranslation } from "react-i18next";
+import CustomNode from "../components/CustomNode"; // Custom node renderer
 
-import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-import CustomNode from "../components/CustomNode"; // ⬅️ Import it
+// Language-specific data
+import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+//import deokuliAnerieyePeopleData_kaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
+//import deokuliAnerieyePeopleData_mai from "../i18n/locales/mai/DeokuliAneriyeAll_mai.json";
 
 function TreeView() {
+  const { i18n } = useTranslation();
   const [treeData, setTreeData] = useState(null);
   const treeContainer = useRef(null);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const [currentZoom, setCurrentZoom] = useState(1.75);
+
+  // Select correct language data
+  let localizedData = deokuliAnerieyePeopleData_en;
+  if (i18n.language === "hi") {
+    localizedData = deokuliAnerieyePeopleData_hi;
+  } else if (i18n.language === "kaithi") {
+    localizedData = deokuliAnerieyePeopleData_hi;
+  } else if (i18n.language === "mai") {
+    localizedData = deokuliAnerieyePeopleData_hi;
+  }
 
   useEffect(() => {
     if (treeContainer.current) {
@@ -20,10 +34,10 @@ function TreeView() {
     }
 
     const idToNodeMap = {};
-    const nameToIdMap = {};
     const roots = [];
 
-    deokuliAnerieyePeopleDataEnglish.forEach((person) => {
+    // First pass: map PersonID to tree nodes
+    localizedData.forEach((person) => {
       const node = {
         name: person["Name"] || "Unknown",
         attributes: {
@@ -36,14 +50,12 @@ function TreeView() {
         _id: person["PersonID"],
       };
       idToNodeMap[person["PersonID"]] = node;
-      nameToIdMap[person["Name"]] = person["PersonID"];
     });
 
-    deokuliAnerieyePeopleDataEnglish.forEach((person) => {
-      const fatherName = person["Father's Name"];
+    // Second pass: build parent-child relationships
+    localizedData.forEach((person) => {
       const childId = person["PersonID"];
       const fatherId = person["ParentID"];
-
       if (fatherId && idToNodeMap[fatherId]) {
         idToNodeMap[fatherId].children.push(idToNodeMap[childId]);
       } else {
@@ -60,7 +72,7 @@ function TreeView() {
           };
 
     setTreeData(finalTreeData);
-  }, []);
+  }, [i18n.language]); // <-- Refresh tree on language change
 
   return (
     <div
@@ -69,18 +81,19 @@ function TreeView() {
     >
       {treeData && (
         <Tree
-  data={treeData}
-  translate={translate}
-  zoomable
-  zoom={0.75}
-  collapsible
-  orientation="vertical"
-  pathFunc="step" // Try "step", "diagonal", or "straight"
-  nodeSize={{ x: 220, y: 120 }}
-  separation={{ siblings: 1.2, nonSiblings: 2 }}
-  renderCustomNodeElement={(rd3tProps) => <CustomNode {...rd3tProps} />}
-/>
-
+          data={treeData}
+          translate={translate}
+          zoom={currentZoom}
+          collapsible
+          orientation="vertical"
+          pathFunc="step"
+          nodeSize={{ x: 520, y: 320 }}
+          separation={{ siblings: 1.2, nonSiblings: 2 }}
+          renderCustomNodeElement={(rd3tProps) => (
+    <CustomNode {...rd3tProps} zoom={currentZoom} />
+  )}
+  onZoom={(zoom) => setCurrentZoom(zoom.k)} // <- Capture zoom scale
+        />
       )}
     </div>
   );
