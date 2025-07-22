@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
 import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
@@ -37,6 +38,31 @@ const PersonDetail = () => {
         <li><strong>{t("personDetail.alias")}:</strong> {person["Alias Name"]}</li>
         <li><strong>{t("personDetail.firstWife")}:</strong> {person["1st wife"]}</li>
         <li><strong>{t("personDetail.secondWife")}:</strong> {person["2nd Wife"]}</li>
+
+        <div className="mt-4 space-y-2">
+          <p></p>
+          <Link to={`/ancestors/${person.PersonID}`} className="block text-blue-600 underline">
+            {t("personDetail.viewAncestorTree")}
+          </Link>
+          <p></p>
+          <Link to={`/descendants/${person.PersonID}`} className="block text-green-600 underline">
+            {t("personDetail.viewDescendantTree")}
+          </Link>
+          <p></p>
+          <Link to={`/combined/${person.PersonID}`} className="ancestor-link">
+            🌳 {t("viewCombinedTree")}
+          </Link>
+          <p></p>
+          <button
+            onClick={() => navigate(-1)}
+            className="mb-4 px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300"
+          >
+            {t("back")}
+          </button>
+        </div>
+
+
+
       </ul>
     </div>
   );

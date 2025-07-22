@@ -43,6 +43,28 @@
     "marriageVillage": "Marriage Village",
     "alias": "Alias Name",
     "firstWife": "1st Wife",
-    "secondWife": "2nd Wife"
-  }
+    "secondWife": "2nd Wife",
+    "viewAncestorTree": "🔼 🔍 View Ancestors",
+    "viewDescendantTree": "🔽 🔎 View Descendants",
+    "viewFullTree": "🔁 🌳 View Full Tree"
+  },
+  "viewAncestorTree": "View Ancestor Tree",
+  "ancestorTreeTitle": "Ancestor Tree",
+  "generation": "Generation",
+  "name": "Name",
+  "fatherName": "Father's Name",
+  "motherVillage": "Mother's Village",
+  "back": "⬅️ Go Back",
+  "noAncestors": "No ancestors found.",
+  "descendantsOf": "Descendants of",
+  "descendantList": "Descendant List",
+  "descendantTree": "Descendant Tree",
+  "combinedTree": {
+  "title": "Combined Tree View",
+  "ancestors": "Ancestors",
+  "descendants": "Descendants",
+  "generation": "Generation"
+},
+"viewCombinedTree": "View Combined Tree"
+
 }

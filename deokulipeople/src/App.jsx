@@ -14,6 +14,10 @@ import GroupDetailPage from "./pages/GroupDetailPage.jsx";
 import GroupSummary from "./pages/GroupSummary";
 import GroupPeopleList from "./pages/GroupPeopleList.jsx";
 import GroupSummaryTable from "./pages/GroupSummaryTable.jsx";
+import AncestorTreePage from "./pages/AncestorTreePage";
+import DescendantTreePage from "./pages/DescendantTreePage";
+import CombinedTreePage from "./pages/CombinedTreePage";
+
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -49,6 +53,11 @@ function App() {
         <Route path="/group-people" element={<GroupPeopleList />} />
         <Route path="/group-summary-table" element={<GroupSummaryTable />} />
         <Route path="/summary" element={<GroupSummary />} />
+        <Route path="/ancestors/:personId" element={<AncestorTreePage />} />
+        <Route path="/descendants/:personId" element={<DescendantTreePage />} />
+        <Route path="/combined/:id" element={<CombinedTreePage />} />
+
+
         </Routes>
       </div>
     </Router>
