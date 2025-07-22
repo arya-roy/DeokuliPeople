@@ -1,6 +1,7 @@
 import { useState } from "react";
 import peopleData from "../data/people.json";
-import deokuliAnerieyePeopleData from "../data/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import { Card } from "../components/ui/Card.jsx";
 import { Link } from "react-router-dom";
 

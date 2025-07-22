@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import peopleData from "../data/people.json";
-import deokuliAnerieyePeopleData from "../data/Deokuli_A_All.json";
+import deokuliAnerieyePeopleData from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 
 const PersonDetail = () => {
   const { id } = useParams();

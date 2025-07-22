@@ -2,7 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "./i18n/i18n.js";
 import peopleData from "./data/people.json";
-import deokuliAnerieyePeopleData from "./data/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataEnglish from "./i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataHindi from "./i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
@@ -26,9 +27,17 @@ function App() {
       <div>
         <nav className="p-4 bg-gray-200 shadow-md flex gap-4">
           
-           <Link to="/">Home</Link> |{" "}
-          <Link to="/">People List</Link>
-          <Link to="/tree">Tree View</Link>
+          <Link to="/">{t('Home')}</Link> |{" "}
+          <Link to="/">{t('People List')}</Link>
+          <Link to="/tree">{t('Tree View')}</Link>
+          
+          <select onChange={(e) => changeLanguage(e.target.value)} value={i18n.language}>
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mai">मैथिली</option>
+            <option value="kaithi">कैथी</option>
+          </select>
+
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -3,7 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import Tree from "react-d3-tree";
 import { useNavigate } from "react-router-dom";
 import peopleData from "../data/people.json";
-import deokuliAnerieyePeopleData from "../data/Deokuli_A_All.json";
+
+import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import CustomNode from "../components/CustomNode"; // ⬅️ Import it
 
 function TreeView() {
@@ -21,7 +23,7 @@ function TreeView() {
     const nameToIdMap = {};
     const roots = [];
 
-    deokuliAnerieyePeopleData.forEach((person) => {
+    deokuliAnerieyePeopleDataEnglish.forEach((person) => {
       const node = {
         name: person["Name"] || "Unknown",
         attributes: {
@@ -37,7 +39,7 @@ function TreeView() {
       nameToIdMap[person["Name"]] = person["PersonID"];
     });
 
-    deokuliAnerieyePeopleData.forEach((person) => {
+    deokuliAnerieyePeopleDataEnglish.forEach((person) => {
       const fatherName = person["Father's Name"];
       const childId = person["PersonID"];
       const fatherId = person["ParentID"];

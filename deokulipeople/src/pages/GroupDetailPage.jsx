@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
-import  groupSummaryData  from "../data/multilang_people_json/DeokuliGroupSummary_en.json"; // your table data
+import  groupSummaryData  from "../i18n/locales/en/DeokuliGroupSummary_en.json"; // your table data
+
+import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
+import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import slugify from "slugify";
 
 const GroupDetailPage = () => {
