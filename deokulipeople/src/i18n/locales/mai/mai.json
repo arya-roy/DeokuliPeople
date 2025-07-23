@@ -64,7 +64,14 @@
   "descendants": "संतान सभ",
   "generation": "पीढ़ी"
 },
-"viewCombinedTree": "संयुक्त वंश वृक्ष देखू"
+"viewCombinedTree": "संयुक्त वंश वृक्ष देखू",
+ "descendantsStats": {
+    "title": "वंशज विवरण",
+    "totalDescendants": "कुल वंशज",
+    "generation": "पीढ़ी",
+    "descendantsInGeneration": "{{generation}} पीढ़ी में {{count}} वंशज",
+    "descendantsInGeneration_plural": "{{generation}} पीढ़ी में {{count}} वंशज"
+  }
 
 
 }

@@ -49,16 +49,16 @@ const PersonDetail = () => {
             {t("personDetail.viewDescendantTree")}
           </Link>
           <p></p>
+          <Link to={`/descendants-stats/${person.PersonID}`} className="block text-green-600 underline">
+            {t("personDetail.viewDescendantStats")}
+          </Link>
+          <p></p>
           <Link to={`/combined/${person.PersonID}`} className="ancestor-link">
             🌳 {t("viewCombinedTree")}
           </Link>
           <p></p>
-          <button
-            onClick={() => navigate(-1)}
-            className="mb-4 px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300"
-          >
-            {t("back")}
-          </button>
+
+          <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
         </div>
 
 

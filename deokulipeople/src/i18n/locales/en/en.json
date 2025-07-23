@@ -46,6 +46,7 @@
     "secondWife": "2nd Wife",
     "viewAncestorTree": "🔼 🔍 View Ancestors",
     "viewDescendantTree": "🔽 🔎 View Descendants",
+    "viewDescendantStats": "🔽 🔎 View Descendants Stats",
     "viewFullTree": "🔁 🌳 View Full Tree"
   },
   "viewAncestorTree": "View Ancestor Tree",
@@ -65,6 +66,15 @@
   "descendants": "Descendants",
   "generation": "Generation"
 },
-"viewCombinedTree": "View Combined Tree"
+"viewCombinedTree": "View Combined Tree",
+  "descendantsStats": {
+    "title": "Descendants Overview",
+    "totalDescendants": "Total Descendants",
+    "generation": "Generation",
+    "descendantsInGeneration": "{{count}} Descendant in Generation {{generation}}",
+    "descendantsInGeneration_plural": "{{count}} Descendants in Generation {{generation}}"
+  },
+"descendantStatsTitle": "Descendant Statistics",
+"title": "📋 People List"
 
 }

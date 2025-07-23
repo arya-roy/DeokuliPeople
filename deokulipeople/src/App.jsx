@@ -16,6 +16,7 @@ import GroupPeopleList from "./pages/GroupPeopleList.jsx";
 import GroupSummaryTable from "./pages/GroupSummaryTable.jsx";
 import AncestorTreePage from "./pages/AncestorTreePage";
 import DescendantTreePage from "./pages/DescendantTreePage";
+import DescendantsStatsPage from "./pages/DescendantsStatsPage";
 import CombinedTreePage from "./pages/CombinedTreePage";
 
 
@@ -55,6 +56,7 @@ function App() {
         <Route path="/summary" element={<GroupSummary />} />
         <Route path="/ancestors/:personId" element={<AncestorTreePage />} />
         <Route path="/descendants/:personId" element={<DescendantTreePage />} />
+        <Route path="/descendants-stats/:personId" element={<DescendantsStatsPage />} />
         <Route path="/combined/:id" element={<CombinedTreePage />} />
 
 
