@@ -18,6 +18,8 @@ import AncestorTreePage from "./pages/AncestorTreePage";
 import DescendantTreePage from "./pages/DescendantTreePage";
 import DescendantsStatsPage from "./pages/DescendantsStatsPage";
 import CombinedTreePage from "./pages/CombinedTreePage";
+import CombinedTreeGraphPage from "./pages/CombinedTreeGraphPage";
+
 
 
 function App() {
@@ -58,6 +60,10 @@ function App() {
         <Route path="/descendants/:personId" element={<DescendantTreePage />} />
         <Route path="/descendants-stats/:personId" element={<DescendantsStatsPage />} />
         <Route path="/combined/:id" element={<CombinedTreePage />} />
+        <Route path="/combined-tree-view/:personId" element={<CombinedTreeGraphPage />} />
+        <Route path="/combined-tree-graph/:personId" element={<CombinedTreeGraphPage />} />
+        <Route path="/combined-tree/:personId" element={<CombinedTreeGraphPage />} />
+
 
 
         </Routes>

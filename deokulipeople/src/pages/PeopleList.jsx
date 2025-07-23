@@ -4,7 +4,7 @@ import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_h
 //import deokuliAnerieyePeopleData_kaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json"; // Add Kaithi
 
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PeopleList = () => {
   const { t, i18n } = useTranslation();

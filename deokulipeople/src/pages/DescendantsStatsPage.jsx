@@ -30,6 +30,17 @@ const DescendantsStatsPage = () => {
   // Lookup Map
   const idMap = new Map(data.map(p => [p.PersonID, p]));
 
+ // const { personId } = useParams();
+console.log("PersonID from URL:", personId);
+
+const selectedPerson = data.find(p => p.PersonID === personId);
+console.log("Matched person:", selectedPerson);
+
+if (!selectedPerson) {
+  console.warn("Person not found for ID:", personId);
+}
+
+
   // Recursive function to collect descendants grouped by generation
   const getDescendantsGrouped = (startId) => {
     const groups = {};

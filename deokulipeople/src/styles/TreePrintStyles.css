@@ -1,0 +1,54 @@
+/* TreePrintStyles.css */
+
+.tree-page-wrapper {
+  padding: 1rem;
+  background-color: white;
+}
+
+.back-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.tree-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+/* Node colors */
+.alive-node circle {
+  fill: green;
+}
+.alive-node text {
+  fill: green;
+}
+
+.deceased-node circle {
+  fill: red;
+}
+.deceased-node text {
+  fill: red;
+}
+
+/* Print-friendly adjustments */
+@media print {
+  .back-btn {
+    display: none;
+  }
+
+  .tree-container {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .tree-page-wrapper {
+    background: white;
+    padding: 0;
+  }
+}

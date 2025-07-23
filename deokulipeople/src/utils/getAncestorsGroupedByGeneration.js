@@ -7,7 +7,7 @@ export function getAncestorsGroupedByGeneration(startId, people) {
     visited.add(currentId);
 
     const person = people.find(p => String(p.PersonID) === String(currentId));
-    if (!person) return;
+    if (!person || !person.ParentID) return; // ⛔ stop if no valid parent ID
 
     const parent = people.find(p => String(p.PersonID) === String(person.ParentID));
     if (parent) {
