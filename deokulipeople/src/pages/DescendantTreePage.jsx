@@ -65,7 +65,7 @@ function DescendantTreePage() {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <h2>{t("descendantTreeTitle", "Descendant Tree")}</h2>
+      <h2>{t("descendantTree")}</h2>
       <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
 
       {descendants.length === 0 ? (

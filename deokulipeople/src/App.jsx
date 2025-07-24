@@ -35,8 +35,8 @@ function App() {
         <nav className="p-4 bg-gray-200 shadow-md flex gap-4">
           
           <Link to="/">{t('Home')}</Link> |{" "}
-          <Link to="/">{t('People List')}</Link>
-          <Link to="/tree">{t('Tree View')}</Link>
+          <Link to="/list">{t('People List')}</Link>|{" "}
+          <Link to="/tree">{t('Tree View')}</Link>|{" "}
           
           <select onChange={(e) => changeLanguage(e.target.value)} value={i18n.language}>
             <option value="en">English</option>

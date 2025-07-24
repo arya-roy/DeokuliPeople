@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 const PersonDetail = () => {
   const { t, i18n } = useTranslation();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Choose dataset based on selected language
   let peopleData = deokuliAnerieyePeopleData_en;

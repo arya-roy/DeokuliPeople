@@ -31,7 +31,7 @@
   "familyName": "Family Name",
   "descriptionHead": "Brief description or head of family",
   "glimpses": "🏞️ Glimpses of Deokuli Dham",
-  "peopleList": {
+  "peopleList1": {
     "title": "📋 People List"
   },
   "personDetail": {
@@ -75,6 +75,14 @@
     "descendantsInGeneration_plural": "{{count}} Descendants in Generation {{generation}}"
   },
 "descendantStatsTitle": "Descendant Statistics",
-"title": "📋 People List"
+"title": "📋 People List",
+"searchPlaceholder": "Search by name", 
+"Search by name": "Search by name",
+"peopleList": "📋 People List",
+"Home": "Home",
+"List View": "List View",
+"Tree View": "🌳 Tree View",
+"People List": "📋 People List"
+
 
 }
