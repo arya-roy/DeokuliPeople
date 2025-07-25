@@ -58,6 +58,22 @@ const PersonDetail = () => {
             🌳 {t("viewCombinedTree")}
           </Link>
           <p></p>
+          <Link
+            to={`/panji/${person.PersonID}`}
+            className="mt-2 inline-block text-blue-600 hover:underline"
+          >
+            🧬 {t("panji.viewPanji", "View Panji (Genealogy)")}
+          </Link>
+          <p></p>
+                    <p></p>
+          <Link
+            to={`/panji1/${person.PersonID}`}
+            className="mt-2 inline-block text-blue-600 hover:underline"
+          >
+            🧬 {t("panji.viewPanji", "View Panji (Genealogy)")}
+          </Link>
+          <p></p>
+
 
           <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
         </div>
