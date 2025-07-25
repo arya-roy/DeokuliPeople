@@ -19,6 +19,8 @@ import DescendantTreePage from "./pages/DescendantTreePage";
 import DescendantsStatsPage from "./pages/DescendantsStatsPage";
 import CombinedTreePage from "./pages/CombinedTreePage";
 import CombinedTreeGraphPage from "./pages/CombinedTreeGraphPage";
+import PanjiPage from "./pages/PanjiPage"; // ✅ Import this
+import PanjiPage1 from "./pages/PanjiPage1"; // ✅ Import this
 
 
 
@@ -63,6 +65,9 @@ function App() {
         <Route path="/combined-tree-view/:personId" element={<CombinedTreeGraphPage />} />
         <Route path="/combined-tree-graph/:personId" element={<CombinedTreeGraphPage />} />
         <Route path="/combined-tree/:personId" element={<CombinedTreeGraphPage />} />
+        <Route path="/panji/:personId" element={<PanjiPage />} />
+        <Route path="/panji1/:personId" element={<PanjiPage1 />} />
+
 
 
 
