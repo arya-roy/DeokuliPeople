@@ -1,9 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import  groupSummaryData  from "../i18n/locales/en/DeokuliGroupSummary_en.json"; // your table data
 
 import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
 import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import slugify from "slugify";
+
+import { useTranslation } from "react-i18next";
 
 const GroupDetailPage = () => {
   const { groupId } = useParams();
@@ -13,12 +15,20 @@ const GroupDetailPage = () => {
     (g) => slugify(g.gar || g.Ghar || "", { lower: true }) === groupId
   );
 
+
+  const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
   if (!group) {
     return <div className="p-4 text-red-500">Group not found</div>;
   }
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
+
+      <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
+
       <h1 className="text-2xl font-bold mb-4 text-blue-700">{group.Ghar}</h1>
 
       <table className="table-auto border-collapse w-full text-left">
