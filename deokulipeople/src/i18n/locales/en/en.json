@@ -20,6 +20,7 @@
   "summaryDesc": "Visual stats and breakdowns",
   "treeView": "🌳 Family Tree View",
   "treeDesc": "Explore male hierarchy",
+  "peopleList": "📋 People List",
   "peopleDesc": "Search and filter all people",
   "groupPeopleView": "Group People View",
   "groupSummaryTable": "Group Summary Table View",
@@ -31,9 +32,77 @@
   "familyName": "Family Name",
   "descriptionHead": "Brief description or head of family",
   "glimpses": "🏞️ Glimpses of Deokuli Dham",
+  "quickAccess": "Quick access to major sections",
+  "totalMembers": "Total Members",
+  "livingMembers": "Living Members",
+  "familyLines": "Family Lines",
+  "languagesSupported": "Languages Supported",
+  "latestPeople": "Latest People Added",
+  "recentPeopleDescription": "Track the newest people added to the family tree.",
+  "viewProfile": "View Profile",
+  "viewPeople": "View people",
+  "viewTree": "View tree",
+  "viewSummary": "View summary",
+  "viewAllPeople": "View all people",
+  "heroIllustrationText": "A community of generations connected through heritage, tradition, and shared stories.",
+  "unknown": "Unknown",
+  "totalMembersNote": "Actual people records in the dataset.",
+  "livingMembersNote": "Known living members in the dataset.",
+  "familyLinesNote": "Root ancestor lines identified in the dataset.",
+  "languagesSupportedNote": "Current platform translation support.",
+  "search": {
+    "searchPeople": "Search People",
+    "advancedSearch": "Advanced Search",
+    "searchPlaceholder": "Type name, alias, or location...",
+    "noResults": "No results found",
+    "resultsCount": "{{count}} result found",
+    "resultsCount_plural": "{{count}} results found",
+    "filters": {
+      "alive": "Alive Status",
+      "hasChildren": "Has Children",
+      "location": "Location",
+      "generation": "Generation"
+    },
+    "filterOptions": {
+      "alive": {
+        "all": "All",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "hasChildren": {
+        "all": "All",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "location": {
+        "all": "All Locations"
+      },
+      "generation": {
+        "all": "All Generations"
+      }
+    },
+    "suggestions": "Suggestions",
+    "clearSearch": "Clear Search",
+    "searching": "Searching..."
+  },
+  "relationshipFinder": "Relationship Finder",
+  "person1": "Person 1",
+  "person2": "Person 2",
+  "selectPerson": "Select Person",
+  "searchPerson": "Search by name or ID...",
+  "findRelationship": "Find Relationship",
+  "clear": "Clear",
+  "invalidSelection": "Please select people from the suggestions",
+  "selectBothPeople": "Please select both people",
+  "peopleNotFound": "One or both people not found",
+  "samePerson": "Cannot find relationship with the same person",
+  "relationship": "Relationship",
+  "commonAncestors": "Common Ancestors",
+  "connectionPath": "Connection Path",
   "peopleList1": {
     "title": "📋 People List"
   },
+  "peopleListHint": "This is the concise people list view.",
   "personDetail": {
     "notFound": "Person not found",
     "father": "Father",
@@ -61,12 +130,12 @@
   "descendantList": "Descendant List",
   "descendantTree": "Descendant Tree",
   "combinedTree": {
-  "title": "Combined Tree View",
-  "ancestors": "Ancestors",
-  "descendants": "Descendants",
-  "generation": "Generation"
-},
-"viewCombinedTree": "View Combined Tree",
+    "title": "Combined Tree View",
+    "ancestors": "Ancestors",
+    "descendants": "Descendants",
+    "generation": "Generation"
+  },
+  "viewCombinedTree": "View Combined Tree",
   "descendantsStats": {
     "title": "Descendants Overview",
     "totalDescendants": "Total Descendants",
@@ -74,15 +143,8 @@
     "descendantsInGeneration": "{{count}} Descendant in Generation {{generation}}",
     "descendantsInGeneration_plural": "{{count}} Descendants in Generation {{generation}}"
   },
-"descendantStatsTitle": "Descendant Statistics",
-"title": "📋 People List",
-"searchPlaceholder": "Search by name", 
-"Search by name": "Search by name",
-"peopleList": "📋 People List",
-"Home": "Home",
-"List View": "List View",
-"Tree View": "🌳 Tree View",
-"People List": "📋 People List"
-
-
+  "descendantStatsTitle": "Descendant Statistics",
+  "Home": "Home",
+  "List View": "List View",
+  "Tree View": "🌳 Tree View"
 }

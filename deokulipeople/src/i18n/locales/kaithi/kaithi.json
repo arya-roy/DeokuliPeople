@@ -32,6 +32,59 @@
   "familyName": "𑂓𑂰𑂩𑂰𑂢𑂲 𑂓𑂰𑂩",
   "descriptionHead": "𑂮𑂱𑂘𑂰𑂙𑂰 𑂑𑂱𑂣𑂰 𑂄𑂘𑂲 𑂓𑂰𑂩𑂰𑂢𑂲 𑂘𑂳𑂠𑂰",
   "glimpses": "🏞️ 𑂙𑂰𑂑𑂳𑂪𑂲 𑂠𑂰𑂧𑂰 𑂃𑂩𑂱𑂔𑂰",
+  "quickAccess": "𑂌𑂱𑂘 𑂕𑂲𑂛𑂱𑂝𑂰 𑂫𑂖𑂳𑂩𑂰 𑂆𑂤𑂳𑂩𑂱",
+  "totalMembers": "𑂞𑂰𑂘 𑂓𑂩𑂯𑂳𑂨𑂰𑂙",
+  "livingMembers": "𑂘𑂲𑂌𑂲𑂞 𑂓𑂩𑂯𑂳𑂨𑂰𑂙",
+  "familyLines": "𑂞𑂰𑂩𑂰 𑂢𑂱𑂩𑂰𑂞",
+  "languagesSupported": "𑂮𑂳𑂞𑂰𑂲 𑂣𑂳𑂩𑂱𑂟",
+  "latestPeople": "𑂝𑂰𑂕𑂳𑂡𑂱 𑂓𑂳𑂩𑂰𑂞",
+  "recentPeopleDescription": "𑂂𑂳𑂩𑂰 𑂓𑂳𑂩𑂰𑂞𑂰 𑂨𑂳𑂘𑂳 𑂕𑂱 𑂢𑂲𑂜𑂳 𑂨𑂰𑂟𑂰𑂝𑂳𑂠𑂰",
+  "viewProfile": "𑂯𑂰𑂘𑂱 𑂌𑂳𑂥𑂰𑂩",
+  "viewPeople": "𑂓𑂳𑂩𑂰𑂞 𑂯𑂩𑂰𑂩",
+  "viewTree": "𑂮𑂰𑂠𑂳 𑂯𑂩𑂰𑂩",
+  "viewSummary": "𑂮𑂰𑂠𑂳 𑂑𑂱𑂣𑂰",
+  "viewAllPeople": "𑂓𑂳𑂩𑂰𑂞 𑂆𑂤𑂳𑂩𑂱",
+  "heroIllustrationText": "𑂌𑂱𑂘 𑂲𑂝𑂳𑂠𑂰 𑂓𑂰𑂩𑂰𑂢𑂲 𑂦𑂠𑂰𑂞, 𑂍𑂰𑂩𑇌𑂰 𑂪𑂷𑂇𑂷 𑂒𑂳𑂜 𑂘𑂳𑂖𑂲 𑂥𑂁𑂰𑂙𑂰 𑂙𑂰𑂑𑂳𑂪",
+  "unknown": "𑂓𑂰𑂑𑂳𑂪",
+  "totalMembersNote": "𑂲𑂠𑂰 𑂞𑂰𑂘 𑂓𑂩𑂯𑂳𑂨𑂰𑂙 𑂫𑂳𑂜𑂳 𑂘𑂰 𑂡𑂳𑂡𑂰 𑂢𑂱𑂠𑂲 𑂓𑂰𑂩𑂰𑂢𑂲",
+  "livingMembersNote": "𑂲𑂠𑂰 𑂘𑂲𑂌𑂲𑂞 𑂓𑂩𑂯𑂳𑂨𑂰𑂙 𑂫𑂳𑂜𑂳 𑂘𑂰 𑂙𑂰𑂑𑂳𑂪",
+  "familyLinesNote": "𑂲𑂠𑂰 𑂞𑂰𑂩𑂰 𑂢𑂱𑂩𑂰𑂞 𑂡𑂳𑂡𑂰 𑂒𑂳𑂤𑂚𑂷𑂠",
+  "languagesSupportedNote": "𑂮𑂳𑂞𑂰𑂲 𑂣𑂳𑂩𑂱𑂟 𑂡𑂳𑂲𑂛𑂲",
+  "search": {
+    "searchPeople": "𑂓𑂳𑂩𑂰𑂞 𑂓𑂰𑂑𑂳𑂪",
+    "advancedSearch": "𑂌𑂱𑂚𑂱 𑂓𑂰𑂑𑂳𑂪",
+    "searchPlaceholder": "𑂣𑂧, 𑂌𑂳𑂥𑂰𑂩, 𑂃𑂩𑂱𑂔𑂰 𑂮𑂱𑂠𑂳𑂥𑂱...",
+    "noResults": "𑂓𑂰𑂑𑂳𑂪 𑂣𑂷𑂞𑂱 𑂝𑂰𑂞𑂱",
+    "resultsCount": "{{count}} 𑂩𑂱𑂞𑂱𑂝𑂰 𑂝𑂰𑂞𑂱",
+    "resultsCount_plural": "{{count}} 𑂩𑂱𑂞𑂱𑂝𑂰 𑂝𑂰𑂞𑂱",
+    "filters": {
+      "alive": "𑂘𑂲𑂌𑂲𑂞 𑂮𑂱𑂠𑂳𑂥𑂱",
+      "hasChildren": "𑂮𑂱𑂚𑂱𑂞 𑂃𑂛𑂲",
+      "location": "𑂮𑂱𑂠𑂳𑂥𑂱",
+      "generation": "𑂥𑂁𑂰𑂙𑂱"
+    },
+    "filterOptions": {
+      "alive": {
+        "all": "𑂓𑂳𑂩𑂰𑂞",
+        "yes": "𑂯𑂰𑂠",
+        "no": "𑂝𑂰𑂞𑂱"
+      },
+      "hasChildren": {
+        "all": "𑂓𑂳𑂩𑂰𑂞",
+        "yes": "𑂯𑂰𑂠",
+        "no": "𑂝𑂰𑂞𑂱"
+      },
+      "location": {
+        "all": "𑂓𑂳𑂩𑂰𑂞 𑂮𑂱𑂠𑂳𑂥𑂱"
+      },
+      "generation": {
+        "all": "𑂓𑂳𑂩𑂰𑂞 𑂥𑂁𑂰𑂙𑂱"
+      }
+    },
+    "suggestions": "𑂮𑂱𑂔𑂱𑂞",
+    "clearSearch": "𑂓𑂰𑂑𑂳𑂪 𑂮𑂰𑂠𑂳 𑂓𑂰𑂩𑂱",
+    "searching": "𑂓𑂰𑂑𑂳𑂪 𑂩𑂷𑂞𑂱..."
+  },
   "peopleList1": {
     "title": "📋 𑂩𑂷𑂒𑂰𑂏 𑂮𑂰𑂠𑂹𑂩"
   },
@@ -47,34 +100,35 @@
     "secondWife": "𑂣𑂷𑂠𑂰𑂞 𑂫𑂱𑂍𑂲",
     "viewAncestorTree": "🔼 🔍 पूर्वज",
     "viewDescendantTree": "🔽 🔎 संतान",
+    "viewDescendantStats": "🔽 🔎 संतान आँकड़े",
     "viewFullTree": "🔁 🌳 पूरा वंश"
   },
-   "viewAncestorTree": "𑂯𑂰𑂩𑂲𑂏 𑂰𑂩𑂲 𑂫𑂢𑂰𑂩𑂹𑂩𑂲 𑂫𑂰𑂧𑂲𑂠𑂰",
-   "ancestorTreeTitle": "𑂯𑂰𑂩𑂲𑂏 𑂰𑂩𑂲 𑂫𑂢𑂰𑂩𑂹𑂩𑂲",
+  "viewAncestorTree": "𑂯𑂰𑂩𑂲𑂏 𑂰𑂩𑂲 𑂫𑂢𑂰𑂩𑂹𑂩𑂲 𑂫𑂰𑂧𑂲𑂠𑂰",
+  "ancestorTreeTitle": "𑂯𑂰𑂩𑂲𑂏 𑂰𑂩𑂲 𑂫𑂢𑂰𑂩𑂹𑂩𑂲",
   "generation": "𑂔𑂲𑂙𑂲",
   "name": "𑂢𑂰𑂩𑂹",
   "fatherName": "𑂣𑂰𑂞𑂹𑂠𑂰 𑂢𑂰𑂩𑂹",
   "motherVillage": "𑂧𑂰𑂙𑂰 𑂐𑂰𑂧",
   "back": "⬅️ 𑂫𑂰𑂧𑂹𑂧𑂲",
   "noAncestors": "𑂮𑂷𑂠𑂹 𑂯𑂰𑂩𑂲𑂏 𑂫𑂢𑂰𑂩𑂹𑂩𑂲 𑂯𑂰𑂒𑂰।",
-    "descendantsOf": "𑂑𑂳 𑂥𑂁𑂰𑂨𑂰",
+  "descendantsOf": "𑂑𑂳 𑂥𑂁𑂰𑂨𑂰",
   "descendantList": "𑂥𑂁𑂰𑂨𑂰 𑂮𑂰𑂝𑂰",
   "descendantTree": "𑂥𑂁𑂰𑂨𑂰 𑂞𑂰𑂩𑂲",
   "combinedTree": {
-  "title": "𑂩𑂳𑂩𑂷𑂔 𑂧𑂰𑂩𑂱 𑂧𑂳𑂝𑂹𑂩",
-  "ancestors": "𑂊𑂡𑂰𑂮𑂱",
-  "descendants": "𑂮𑂱𑂚𑂰𑂣𑂰",
-  "generation": "𑂕𑂱𑂝𑂲"
-},
-"viewCombinedTree": "𑂩𑂳𑂩𑂷𑂔 𑂧𑂰𑂩𑂱 𑂧𑂳𑂝𑂹𑂩 𑂑𑂳𑂘𑂷𑂨",
-"searchPlaceholder": "नाम से खोजु", 
-"Search by name": "नाम से खोजु",
-"Home": "𑂔𑂷𑂧𑂰",
-"List View": "List View",
-"Tree View": "🌳 𑂮𑂰𑂠𑂳 𑂓𑂳𑂢𑂱 𑂮𑂰𑂩𑂱",
-"People List": "📋 𑂓𑂳𑂩𑂰𑂞𑂰𑂘𑂳 𑂩𑂱𑂑𑂰"
-
-
-
-
+    "title": "𑂩𑂳𑂩𑂷𑂔 𑂧𑂰𑂩𑂱 𑂧𑂳𑂝𑂹𑂩",
+    "ancestors": "𑂊𑂡𑂰𑂮𑂱",
+    "descendants": "𑂮𑂱𑂚𑂰𑂣𑂰",
+    "generation": "𑂕𑂱𑂝𑂲"
+  },
+  "viewCombinedTree": "𑂩𑂳𑂩𑂷𑂔 𑂧𑂰𑂩𑂱 𑂧𑂳𑂝𑂹𑂩 𑂑𑂳𑂘𑂷𑂨",
+  "descendantsStats": {
+    "title": "𑂥𑂁𑂰𑂨𑂰 𑂄𑂁𑂑𑂰𑂞𑂱",
+    "totalDescendants": "𑂞𑂰𑂩𑂲 𑂥𑂁𑂰𑂨𑂰",
+    "generation": "𑂔𑂲𑂙𑂲",
+    "descendantsInGeneration": "{{generation}} 𑂔𑂲𑂙𑂲 𑂃𑂩𑂱 {{count}} 𑂥𑂁𑂰𑂨𑂰",
+    "descendantsInGeneration_plural": "{{generation}} 𑂔𑂲𑂙𑂲 𑂃𑂩𑂱 {{count}} 𑂥𑂁𑂰𑂨𑂰"
+  },
+  "Home": "𑂔𑂷𑂧𑂰",
+  "List View": "𑂮𑂰𑂝𑂰 𑂮𑂰𑂩𑂱",
+  "Tree View": "🌳 𑂮𑂰𑂠𑂳 𑂓𑂳𑂢𑂱 𑂮𑂰𑂩𑂱"
 }

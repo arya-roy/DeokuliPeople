@@ -32,56 +32,104 @@
   "familyName": "परिवार का नाम",
   "descriptionHead": "संक्षिप्त विवरण या परिवार के मुखिया",
   "glimpses": "🏞️ देवकुली धाम की झलकियां",
+  "quickAccess": "मुख्य अनुभागों के लिए त्वरित पहुँच",
+  "totalMembers": "कुल सदस्य",
+  "livingMembers": "जीवित सदस्य",
+  "familyLines": "वंश रेखाएं",
+  "languagesSupported": "समर्थित भाषाएँ",
+  "latestPeople": "नवीनतम जोड़े गए लोग",
+  "recentPeopleDescription": "परिवार के वृक्ष में नवीनतम रिकॉर्ड देखें।",
+  "viewProfile": "प्रोफ़ाइल देखें",
+  "viewPeople": "लोग देखें",
+  "viewTree": "वृक्ष देखें",
+  "viewSummary": "सारांश देखें",
+  "viewAllPeople": "सभी लोग देखें",
+  "heroIllustrationText": "परंपरा, विरासत और साझा कहानियों से जुड़े पीढ़ियों का समुदाय।",
+  "unknown": "अज्ञात",
+  "totalMembersNote": "डेटासेट में वास्तविक लोगों के रिकॉर्ड।",
+  "livingMembersNote": "डेटासेट में ज्ञात जीवित सदस्य।",
+  "familyLinesNote": "डेटासेट में पहचानी गई मूल पूर्वज पंक्तियाँ।",
+  "languagesSupportedNote": "वर्तमान प्लेटफ़ॉर्म अनुवाद समर्थन।",
+  "search": {
+    "searchPeople": "लोग खोजें",
+    "advancedSearch": "उन्नत खोज",
+    "searchPlaceholder": "नाम, उपनाम, या स्थान टाइप करें...",
+    "noResults": "कोई परिणाम नहीं मिला",
+    "resultsCount": "{{count}} परिणाम मिला",
+    "resultsCount_plural": "{{count}} परिणाम मिले",
+    "filters": {
+      "alive": "जीवित स्थिति",
+      "hasChildren": "संतान हैं",
+      "location": "स्थान",
+      "generation": "पीढ़ी"
+    },
+    "filterOptions": {
+      "alive": {
+        "all": "सभी",
+        "yes": "हाँ",
+        "no": "नहीं"
+      },
+      "hasChildren": {
+        "all": "सभी",
+        "yes": "हाँ",
+        "no": "नहीं"
+      },
+      "location": {
+        "all": "सभी स्थान"
+      },
+      "generation": {
+        "all": "सभी पीढ़ियाँ"
+      }
+    },
+    "suggestions": "सुझाव",
+    "clearSearch": "खोज साफ करें",
+    "searching": "खोज रहे हैं..."
+  },
   "peopleList1": {
     "title": "📋 लोगों की सूची"
   },
+  "peopleListHint": "यह संक्षिप्त लोगों की सूची दृश्य है।",
   "personDetail": {
     "notFound": "व्यक्ति नहीं मिला",
-    "father": "पिता का नाम",
-    "mother": "माता का नाम",
+    "father": "पिता",
+    "mother": "माता",
     "motherVillage": "माता का गांव",
-    "alive": "जीवित हैं",
+    "alive": "जीवित",
     "marriageVillage": "विवाह गांव",
     "alias": "उपनाम",
     "firstWife": "पहली पत्नी",
     "secondWife": "दूसरी पत्नी",
-    "viewAncestorTree": "🔼 🔍 पूर्वजों का वंशवृक्ष देखें",
+    "viewAncestorTree": "🔼 🔍 पूर्वज देखें",
     "viewDescendantTree": "🔽 🔎 वंशज देखें",
-    "viewDescendantStats": "🔽 🔎 वंशज सूची अवलोकन",
-    "viewFullTree": "🔁 🌳 पूरा वंश वृक्ष देखें"
+    "viewDescendantStats": "🔽 🔎 वंशज आँकड़े देखें",
+    "viewFullTree": "🔁 🌳 पूरा वृक्ष देखें"
   },
-  "viewAncestorTree": "पूर्वजों का वंशवृक्ष देखें",
-  "ancestorTreeTitle": "पूर्वज वंशावली",
+  "viewAncestorTree": "पूर्वज वृक्ष देखें",
+  "ancestorTreeTitle": "पूर्वज वृक्ष",
   "generation": "पीढ़ी",
   "name": "नाम",
   "fatherName": "पिता का नाम",
-  "motherVillage": "माँ का गांव",
+  "motherVillage": "माता का गांव",
   "back": "⬅️ वापस जाएँ",
   "noAncestors": "कोई पूर्वज नहीं मिले।",
   "descendantsOf": "के वंशज",
   "descendantList": "वंशज सूची",
-  "descendantTree": "वंश वृक्ष",
+  "descendantTree": "वंशज वृक्ष",
   "combinedTree": {
-  "title": "संयुक्त वंश वृक्ष",
-  "ancestors": "पूर्वज",
-  "descendants": "संतान",
-  "generation": "पीढ़ी"
-},
-"viewCombinedTree": "संयुक्त वंश वृक्ष देखें",
+    "title": "संयुक्त वृक्ष दृश्य",
+    "ancestors": "पूर्वज",
+    "descendants": "वंशज",
+    "generation": "पीढ़ी"
+  },
+  "viewCombinedTree": "संयुक्त वृक्ष देखें",
   "descendantsStats": {
     "title": "वंशज अवलोकन",
     "totalDescendants": "कुल वंशज",
     "generation": "पीढ़ी",
-    "descendantsInGeneration": "{{generation}}वीं पीढ़ी में {{count}} वंशज",
-    "descendantsInGeneration_plural": "{{generation}}वीं पीढ़ी में {{count}} वंशज"
+    "descendantsInGeneration": "{{generation}} पीढ़ी में {{count}} वंशज",
+    "descendantsInGeneration_plural": "{{generation}} पीढ़ी में {{count}} वंशज"
   },
-  "title": "📋 लोगों की सूची",
-  
-"searchPlaceholder": "नाम से खोजें ", 
-"Search by name": "नाम से खोजें ",
-"Home": "होम",
-"List View": "List View",
-"Tree View": "🌳 वंश वृक्ष दृश्य",
-"People List": "📋 लोगों की सूची"
-
+  "Home": "होम",
+  "List View": "सूची दृश्य",
+  "Tree View": "🌳 वृक्ष दृश्य"
 }

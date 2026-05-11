@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from "react";
-import { useTranslation } from "react-i18next";
 import "./i18n/i18n.js";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navigation from "./components/layout/Navigation";
+import { ROUTES } from "./constants/routes";
 
 const Home = lazy(() => import("./pages/Home"));
 const PeopleList = lazy(() => import("./pages/PeopleList"));
@@ -18,63 +19,43 @@ const CombinedTreePage = lazy(() => import("./pages/CombinedTreePage"));
 const CombinedTreeGraphPage = lazy(() => import("./pages/CombinedTreeGraphPage"));
 const PanjiPage = lazy(() => import("./pages/PanjiPage"));
 const PanjiPage1 = lazy(() => import("./pages/PanjiPage1"));
-
-
+const AdvancedSearchPage = lazy(() => import("./pages/AdvancedSearchPage"));
+const RelationshipFinderPage = lazy(() => import("./pages/RelationshipFinderPage"));
+const AdminPage = lazy(() => import("./pages/admin/AdminPage"));
 
 function App() {
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <Router>
       <div>
-        <nav className="p-4 bg-gray-200 shadow-md flex gap-4">
-          
-          <Link to="/">{t('Home')}</Link> |{" "}
-          <Link to="/list">{t('People List')}</Link>|{" "}
-          <Link to="/tree">{t('Tree View')}</Link>|{" "}
-          
-          <select onChange={(e) => changeLanguage(e.target.value)} value={i18n.language}>
-            <option value="en">English</option>
-            <option value="hi">हिंदी</option>
-            <option value="mai">मैथिली</option>
-            <option value="kaithi">कैथी</option>
-          </select>
-
-        </nav>
+        <Navigation />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
-        <Route path="/list" element={<PeopleList />} />
-        <Route path="/tree" element={<TreeView />} />
-        <Route path="/person/:id" element={<PersonDetail />} />
-        <Route path="/group/:groupId" element={<GroupDetailPage />} />
-        <Route path="/group/:groupName" element={<GroupSummary />} />
-        <Route path="/group-people" element={<GroupPeopleList />} />
-        <Route path="/group-summary-table" element={<GroupSummaryTable />} />
-        <Route path="/summary" element={<GroupSummary />} />
-        <Route path="/ancestors/:personId" element={<AncestorTreePage />} />
-        <Route path="/descendants/:personId" element={<DescendantTreePage />} />
-        <Route path="/descendants-stats/:personId" element={<DescendantsStatsPage />} />
-        <Route path="/combined/:id" element={<CombinedTreePage />} />
-        <Route path="/combined-tree-view/:personId" element={<CombinedTreeGraphPage />} />
-        <Route path="/combined-tree-graph/:personId" element={<CombinedTreeGraphPage />} />
-        <Route path="/combined-tree/:personId" element={<CombinedTreeGraphPage />} />
-        <Route path="/panji/:personId" element={<PanjiPage />} />
-        <Route path="/panji1/:personId" element={<PanjiPage1 />} />
-
-
-
-
-        </Routes>
+            <Route path={ROUTES.HOME} element={<Home />} />
+            <Route path={ROUTES.PEOPLE_LIST} element={<PeopleList />} />
+            <Route path={ROUTES.TREE_VIEW} element={<TreeView />} />
+            <Route path={ROUTES.PERSON_DETAIL} element={<PersonDetail />} />
+            <Route path={ROUTES.GROUP_DETAIL} element={<GroupDetailPage />} />
+            <Route path={ROUTES.GROUP_SUMMARY} element={<GroupSummary />} />
+            <Route path={ROUTES.GROUP_PEOPLE} element={<GroupPeopleList />} />
+            <Route path={ROUTES.GROUP_SUMMARY_TABLE} element={<GroupSummaryTable />} />
+            <Route path={ROUTES.SUMMARY} element={<GroupSummary />} />
+            <Route path={ROUTES.ANCESTORS} element={<AncestorTreePage />} />
+            <Route path={ROUTES.DESCENDANTS} element={<DescendantTreePage />} />
+            <Route path={ROUTES.DESCENDANTS_STATS} element={<DescendantsStatsPage />} />
+            <Route path={ROUTES.COMBINED} element={<CombinedTreePage />} />
+            <Route path={ROUTES.COMBINED_TREE_VIEW} element={<CombinedTreeGraphPage />} />
+            <Route path={ROUTES.COMBINED_TREE_GRAPH} element={<CombinedTreeGraphPage />} />
+            <Route path={ROUTES.COMBINED_TREE} element={<CombinedTreeGraphPage />} />
+            <Route path={ROUTES.PANJI} element={<PanjiPage />} />
+            <Route path={ROUTES.PANJI1} element={<PanjiPage1 />} />
+            <Route path={ROUTES.ADVANCED_SEARCH} element={<AdvancedSearchPage />} />
+            <Route path={ROUTES.RELATIONSHIP_FINDER} element={<RelationshipFinderPage />} />
+            <Route path={ROUTES.ADMIN} element={<AdminPage />} />
+          </Routes>
         </Suspense>
       </div>
     </Router>
   );
-
-  }
+}
 
 export default App;

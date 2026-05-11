@@ -6,6 +6,7 @@ const localeUrls = {
 };
 
 export async function loadPeopleData(locale = 'en') {
+  // Load from JSON files (database operations are handled separately for admin)
   const normalizedLocale = locale?.toLowerCase();
   const url = localeUrls[normalizedLocale] || localeUrls.en;
   const response = await fetch(url);

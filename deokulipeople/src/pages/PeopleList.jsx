@@ -6,7 +6,6 @@ import { loadPeopleData } from "../utils/loadPeopleData";
 const PeopleList = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
   const [peopleData, setPeopleData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,17 +25,15 @@ const PeopleList = () => {
     };
   }, [i18n.language]);
 
-  const filteredPeople = peopleData.filter((person) => {
-    const name = person.Name || "";
-    const search = searchTerm.toLowerCase();
-
-    return name.toLowerCase().includes(search);
-  });
-
   if (loading) {
     return (
       <div className="p-4">
-        <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+        >
+          {t("back", "⬅️ Go Back")}
+        </button>
         <p>{t("loading", "Loading...")}</p>
       </div>
     );
@@ -44,31 +41,42 @@ const PeopleList = () => {
 
   return (
     <div className="p-4">
-      <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
+      <button
+        onClick={() => navigate(-1)}
+        className="mb-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+      >
+        {t("back", "⬅️ Go Back")}
+      </button>
 
-      <h1 className="text-xl font-bold mb-4">{t("peopleList1.title")}</h1>
+      <h1 className="text-xl font-bold mb-4">{t("peopleList1.title", "People List")}</h1>
+      <p className="mb-4 text-sm text-gray-600">
+        {t('peopleListHint', 'This is the concise people list view.')} {' '}
+        <Link to="/advanced-search" className="text-blue-600 hover:underline">
+          {t('search.advancedSearch', 'Advanced Search')}
+        </Link>
+      </p>
 
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder={t("searchPlaceholder", "Search by name")}
-        className="mb-4 px-3 py-2 border border-gray-300 rounded w-full max-w-md"
-      />
+      <div className="mb-4 text-sm text-gray-600">
+        {t('showingResults', 'Showing {{count}} of {{total}} people', {
+          count: peopleData.length,
+          total: peopleData.length
+        })}
+      </div>
 
-      {filteredPeople.length === 0 ? (
-        <p>{t("noResults", "No people found")}</p>
+      {peopleData.length === 0 ? (
+        <p className="text-center py-8 text-gray-500">
+          {t("noResults", "No people found matching your search criteria")}
+        </p>
       ) : (
-        <ul>
-          {filteredPeople.map((person) => (
-            <li key={person.PersonID} className="mb-1">
+        <ul className="space-y-3">
+          {peopleData.map((person) => (
+            <li key={person.PersonID} className="bg-white p-4 rounded-lg shadow-sm border">
               <Link
                 to={`/person/${person.PersonID}`}
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:text-blue-800 font-semibold hover:underline"
               >
-                {person.Name}
+                {person.Name || t('unknown', 'Unknown')}
               </Link>
-              {person.Ghar && <span className="text-sm text-gray-500 ml-2">({person.Ghar})</span>}
             </li>
           ))}
         </ul>

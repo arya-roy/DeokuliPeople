@@ -32,7 +32,62 @@
   "familyName": "परिवारक नाम",
   "descriptionHead": "संक्षिप्त विवरण वा परिवारक मुखिया",
   "glimpses": "🏞️ देवकुली धामक झलक",
-  "peopleList1": {"title": "📋 लोक सभक सूची"},
+  "quickAccess": "मुख्य भाग सभक त्वरित पहुँच",
+  "totalMembers": "कुल सदस्य",
+  "livingMembers": "जियैत सदस्य",
+  "familyLines": "वंश रेखा",
+  "languagesSupported": "समर्थित भाषा",
+  "latestPeople": "नवीनतम जोड़ल लोक",
+  "recentPeopleDescription": "वंश वृक्ष में नवका रिकॉर्ड देखू।",
+  "viewProfile": "प्रोफाइल देखू",
+  "viewPeople": "लोक देखू",
+  "viewTree": "वृक्ष देखू",
+  "viewSummary": "सारांश देखू",
+  "viewAllPeople": "सभ लोक देखू",
+  "heroIllustrationText": "परंपरा, विरासत आ साझा कथा सँ जुड़ल पीढ़ी सभक समुदाय।",
+  "unknown": "अज्ञात",
+  "totalMembersNote": "डेटासेट में वास्तविक लोकक रिकॉर्ड।",
+  "livingMembersNote": "डेटासेट में ज्ञात जीवित सदस्य।",
+  "familyLinesNote": "डेटासेट में पहिचानल मूल पूर्वज रेखा।",
+  "languagesSupportedNote": "वर्तमान प्लेटफ़ॉर्म अनुवाद समर्थन।",
+  "search": {
+    "searchPeople": "लोक खोजू",
+    "advancedSearch": "उन्नत खोज",
+    "searchPlaceholder": "नाम, उपनाम, अथवा स्थान टाइप करू...",
+    "noResults": "कोनो परिणाम नहि मिलल",
+    "resultsCount": "{{count}} परिणाम मिलल",
+    "resultsCount_plural": "{{count}} परिणाम मिलल",
+    "filters": {
+      "alive": "जीवित स्थिति",
+      "hasChildren": "संतान अछि",
+      "location": "स्थान",
+      "generation": "पीढ़ी"
+    },
+    "filterOptions": {
+      "alive": {
+        "all": "सभ",
+        "yes": "हाँ",
+        "no": "नहि"
+      },
+      "hasChildren": {
+        "all": "सभ",
+        "yes": "हाँ",
+        "no": "नहि"
+      },
+      "location": {
+        "all": "सभ स्थान"
+      },
+      "generation": {
+        "all": "सभ पीढ़ी"
+      }
+    },
+    "suggestions": "सुझाव",
+    "clearSearch": "खोज साफ करू",
+    "searching": "खोज रहल अछि..."
+  },
+  "peopleList1": {
+    "title": "📋 लोक सभक सूची"
+  },
   "personDetail": {
     "notFound": "व्यक्ति नहीं मिला",
     "father": "पिताक नाम",
@@ -45,10 +100,11 @@
     "secondWife": "दोसर पत्नी",
     "viewAncestorTree": "🔼 🔍 पुरखा देखू",
     "viewDescendantTree": "🔽 🔎 संतान देखू",
+    "viewDescendantStats": "🔽 🔎 संतान आँकड़ा देखू",
     "viewFullTree": "🔁 🌳 पूरा वंश देखू"
   },
   "viewAncestorTree": "पूर्वज सभक वंशवृक्ष देखू",
-   "ancestorTreeTitle": "पूर्वज सभक वंशावली",
+  "ancestorTreeTitle": "पूर्वज सभक वंशावली",
   "generation": "पीढ़ी",
   "name": "नाम",
   "fatherName": "पिताक नाम",
@@ -59,27 +115,20 @@
   "descendantList": "संतान सूची",
   "descendantTree": "संतान वृक्ष",
   "combinedTree": {
-  "title": "संयुक्त वंश वृक्ष",
-  "ancestors": "पूर्वज सभ",
-  "descendants": "संतान सभ",
-  "generation": "पीढ़ी"
-},
-"viewCombinedTree": "संयुक्त वंश वृक्ष देखू",
- "descendantsStats": {
+    "title": "संयुक्त वंश वृक्ष",
+    "ancestors": "पूर्वज सभ",
+    "descendants": "संतान सभ",
+    "generation": "पीढ़ी"
+  },
+  "viewCombinedTree": "संयुक्त वंश वृक्ष देखू",
+  "descendantsStats": {
     "title": "वंशज विवरण",
     "totalDescendants": "कुल वंशज",
     "generation": "पीढ़ी",
     "descendantsInGeneration": "{{generation}} पीढ़ी में {{count}} वंशज",
     "descendantsInGeneration_plural": "{{generation}} पीढ़ी में {{count}} वंशज"
   },
-"searchPlaceholder": "नाम से खोजु", 
-"Search by name": "नाम से खोजु",
-"Home": "होम",
-"List View": "लोक सभक सूची",
-"Tree View": "🌳 वंश वृक्ष दृश्य",
-"People List": "📋 लोक सभक सूची"
-
-
-
-
+  "Home": "होम",
+  "List View": "लोक सभक सूची",
+  "Tree View": "🌳 वंश वृक्ष दृश्य"
 }

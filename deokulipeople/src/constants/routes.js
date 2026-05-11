@@ -1,0 +1,30 @@
+export const ROUTES = {
+  HOME: "/",
+  PEOPLE_LIST: "/list",
+  TREE_VIEW: "/tree",
+  PERSON_DETAIL: "/person/:id",
+  GROUP_DETAIL: "/group/:groupId",
+  GROUP_SUMMARY: "/group/:groupName",
+  GROUP_PEOPLE: "/group-people",
+  GROUP_SUMMARY_TABLE: "/group-summary-table",
+  SUMMARY: "/summary",
+  ANCESTORS: "/ancestors/:personId",
+  DESCENDANTS: "/descendants/:personId",
+  DESCENDANTS_STATS: "/descendants-stats/:personId",
+  COMBINED: "/combined/:id",
+  COMBINED_TREE_VIEW: "/combined-tree-view/:personId",
+  COMBINED_TREE_GRAPH: "/combined-tree-graph/:personId",
+  COMBINED_TREE: "/combined-tree/:personId",
+  PANJI: "/panji/:personId",
+  PANJI1: "/panji1/:personId",
+  ADVANCED_SEARCH: "/advanced-search",
+  RELATIONSHIP_FINDER: "/relationship-finder",
+  ADMIN: "/admin",
+};
+
+export const LANGUAGES = [
+  { code: "en", name: "English" },
+  { code: "hi", name: "हिंदी" },
+  { code: "mai", name: "मैथिली" },
+  { code: "kaithi", name: "कैथी" },
+];

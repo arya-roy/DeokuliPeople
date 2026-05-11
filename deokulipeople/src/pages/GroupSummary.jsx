@@ -8,6 +8,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Card } from "../components/ui/Card.jsx";
 
 // Sample data
@@ -68,6 +70,7 @@ function getGotraStats(data) {
 }
 
 export default function GroupSummary() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
 
   const filteredData = initialData.filter((row) =>
@@ -81,6 +84,21 @@ export default function GroupSummary() {
   return (
     <div className="p-6 max-w-screen-xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">📋 Group Summary</h1>
+
+      <div className="flex flex-wrap gap-3 mb-6">
+        <Link
+          to="/group-people"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+        >
+          {t("groupPeopleView")}
+        </Link>
+        <Link
+          to="/group-summary-table"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition"
+        >
+          {t("groupSummaryTable")}
+        </Link>
+      </div>
 
       <input
         type="text"
