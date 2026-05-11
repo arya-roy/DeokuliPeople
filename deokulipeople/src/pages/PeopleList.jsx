@@ -1,32 +1,46 @@
-import React, { useState } from "react";
-import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-// import deokuliAnerieyePeopleData_kaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
-
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 const PeopleList = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [peopleData, setPeopleData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Determine dataset based on selected language
-  let peopleData = deokuliAnerieyePeopleData_en;
-  if (i18n.language === "hi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  } else if (i18n.language === "kaithi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  } else if (i18n.language === "mai") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  }
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+        setLoading(false);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
 
   const filteredPeople = peopleData.filter((person) => {
     const name = person.Name || "";
     const search = searchTerm.toLowerCase();
 
-    return (name.toLowerCase().includes(search));
+    return name.toLowerCase().includes(search);
   });
+
+  if (loading) {
+    return (
+      <div className="p-4">
+        <button onClick={() => navigate(-1)}>{t("back", "⬅️ Go Back")}</button>
+        <p>{t("loading", "Loading...")}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-4">

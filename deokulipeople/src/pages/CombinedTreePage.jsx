@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { useParams, Link,useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-// import deokuliAnerieyePeopleData_mai from "../i18n/locales/mai/DeokuliAneriyeAll_mai.json";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 import { getAncestorsGroupedByGeneration } from "../utils/getAncestorsGroupedByGeneration";
 import { getDescendantsGroupedByGeneration } from "../utils/getDescendantsGroupedByGeneration";
@@ -15,13 +12,23 @@ const CombinedTreePage = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [viewMode, setViewMode] = useState("card"); // "card" or "tree"
+  const [peopleData, setPeopleData] = useState(null);
 
-  // Load language-specific data
-  let peopleData = deokuliAnerieyePeopleData_en;
-  if (i18n.language === "hi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  } else if (i18n.language === "mai") {
-    peopleData = deokuliAnerieyePeopleData_hi;
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
+
+  if (!peopleData) {
+    return <div>{t("loading", "Loading...")}</div>;
   }
 
   const person = peopleData.find((p) => String(p.PersonID) === id);

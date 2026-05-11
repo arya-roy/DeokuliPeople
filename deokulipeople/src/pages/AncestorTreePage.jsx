@@ -1,34 +1,34 @@
 // src/pages/AncestorTreePage.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/TreeStyles.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-import englishData from "../i18n/locales/en/Deokuli_A_All.json";
-import hindiData from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-//import maithiliData from "../i18n/locales/mai/DeokuliAneriyeAll_mai.json";
-//import kaithiData from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 function AncestorTreePage() {
     const { personId } = useParams();
     const navigate = useNavigate();
     const { i18n, t } = useTranslation();
+    const [data, setData] = useState(null);
 
-    const getLocalizedData = () => {
-        switch (i18n.language) {
-            case "hi":
-                return hindiData;
-            case "mai":
-                return hindiData;
-            case "kaithi":
-                return hindiData;
-            case "en":
-            default:
-                return englishData;
-        }
-    };
+    useEffect(() => {
+        let active = true;
 
-    const data = getLocalizedData();
+        loadPeopleData(i18n.language).then((loadedData) => {
+            if (active) {
+                setData(loadedData || []);
+            }
+        });
+
+        return () => {
+            active = false;
+        };
+    }, [i18n.language]);
+
+    if (!data) {
+        return <div>{t("loading", "Loading...")}</div>;
+    }
+
     const idMap = new Map(data.map((p) => [p.PersonID, p]));
 
     // Recursive ancestor fetch

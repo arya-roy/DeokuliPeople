@@ -1,32 +1,31 @@
 // src/pages/DescendantTreePage.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../styles/TreeStyles.css";
-
-
-import englishData from "../i18n/locales/en/Deokuli_A_All.json";
-import hindiData from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 function DescendantTreePage() {
   const { personId } = useParams();
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
+  const [data, setData] = useState(null);
 
-  // Select data based on language
-  const getLocalizedData = () => {
-    switch (i18n.language) {
-      case "hi":
-      case "mai":
-      case "kaithi":
-        return hindiData;
-      case "en":
-      default:
-        return englishData;
-    }
-  };
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((loadedData) => {
+      if (active) {
+        setData(loadedData || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
 
-  const data = getLocalizedData();
+  if (!data) {
+    return <div>{t("loading", "Loading...")}</div>;
+  }
 
   // Create a lookup map
   const idMap = new Map();

@@ -1,15 +1,30 @@
 // src/components/TreeView.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import Tree from 'react-d3-tree';
-import peopleData from '../data/people.json';
+import { loadPeopleJson } from '../utils/loadPeopleData';
 import PersonCard from './PersonCard';
 
 const TreeView = () => {
   const treeContainer = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [peopleData, setPeopleData] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    loadPeopleJson().then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // Convert flat list to nested tree data
   const buildTreeData = () => {
+    if (!peopleData) return [];
+
     const personMap = {};
     peopleData.forEach(person => {
       personMap[person['Name']] = { ...person, children: [] };
@@ -41,6 +56,10 @@ const TreeView = () => {
       </div>
     </foreignObject>
   );
+
+  if (!peopleData) {
+    return <div style={{ padding: '1rem' }}>Loading tree data...</div>;
+  }
 
   return (
     <div style={{ width: '100%', height: '100vh' }} ref={treeContainer}>

@@ -1,33 +1,30 @@
 // src/components/AncestorListView.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-// Import localized data
-import personDataEn from "../i18n/locales/en/Deokuli_A_All.json";
-import personDataHi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+import { loadPeopleData } from "../utils/loadPeopleData";
 //import personDataMai from "../i18n/locales/mai/DeokuliAneriyeAll_mai.json";
 //import personDataKaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
 
 const AncestorListView = () => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
+  const [personData, setPersonData] = useState(null);
 
-  // Pick language-specific data
-  const language = i18n.language;
-  let personData;
-  switch (language) {
-    case "hi":
-      personData = personDataHi;
-      break;
-    case "mai":
-      personData = personDataHi;
-      break;
-    case "kaithi":
-      personData = personDataHi;
-      break;
-    default:
-      personData = personDataEn;
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPersonData(data || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
+
+  if (!personData) {
+    return <div>{t("loading", "Loading...")}</div>;
   }
 
   const idToPerson = {};

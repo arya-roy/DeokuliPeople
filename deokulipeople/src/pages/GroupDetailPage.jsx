@@ -1,12 +1,27 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import  groupSummaryData  from "../i18n/locales/en/DeokuliGroupSummary_en.json"; // your table data
-
-import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+import { loadGroupSummaryData } from "../utils/loadPeopleData";
 import slugify from "slugify";
 
 const GroupDetailPage = () => {
   const { groupId } = useParams();
+  const [groupSummaryData, setGroupSummaryData] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    loadGroupSummaryData().then((data) => {
+      if (active) {
+        setGroupSummaryData(data || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  if (!groupSummaryData) {
+    return <div className="p-4">Loading...</div>;
+  }
 
   // Find matching group based on slug
   const group = groupSummaryData.find(

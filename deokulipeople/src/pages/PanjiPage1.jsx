@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import data from "../i18n/locales/en/Deokuli_A_All.json"; // or Hindi etc.
 import { useTranslation } from "react-i18next";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 const PanjiPage1 = () => {
   const { personId } = useParams();
   const navigate = useNavigate();
   const [panjiData, setPanjiData] = useState([]);
-  const { t } = useTranslation();
+  const [loading, setLoading] = useState(true);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (!personId) return;
 
-    console.log("🔍 Starting Panji calculation for ID:", personId);
+    let active = true;
+    setLoading(true);
 
-    const personMap = Object.fromEntries(data.map((p) => [p.PersonID, p]));
-    const selfPerson = personMap[personId];
+    loadPeopleData(i18n.language).then((data) => {
+      if (!active || !personId) return;
+
+      console.log("🔍 Starting Panji calculation for ID:", personId);
+
+      const personMap = Object.fromEntries(data.map((p) => [p.PersonID, p]));
+      const selfPerson = personMap[personId];
 
     if (!selfPerson) {
       console.warn("❌ Person not found with ID:", personId);
@@ -121,7 +128,17 @@ const PanjiPage1 = () => {
 
     console.log("✅ Full Panji Data:", fullPanji);
     setPanjiData(fullPanji);
-  }, [personId]);
+    setLoading(false);
+  });
+
+    return () => {
+      active = false;
+    };
+  }, [personId, i18n.language]);
+
+  if (loading) {
+    return <div className="p-4">{t("loading", "Loading...")}</div>;
+  }
 
   return (
     <div className="p-4">

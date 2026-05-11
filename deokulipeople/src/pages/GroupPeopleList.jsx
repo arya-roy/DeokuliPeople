@@ -1,7 +1,5 @@
-import { useState } from "react";
-import peopleData from "../data/people.json";
-import deokuliAnerieyePeopleDataEnglish from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleDataHindi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
+import { useEffect, useState } from "react";
+import { loadPeopleJson } from "../utils/loadPeopleData";
 import { Card } from "../components/ui/Card.jsx";
 import { Link } from "react-router-dom";
 
@@ -372,6 +370,23 @@ const groupSummary = [
 
 export default function GroupPeopleList() {
   const [expandedGroup, setExpandedGroup] = useState(null);
+  const [peopleData, setPeopleData] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    loadPeopleJson().then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  if (!peopleData) {
+    return <div className="p-4">Loading...</div>;
+  }
 
   const groupedPeople = groupSummary.map((group) => {
     return {

@@ -2,30 +2,35 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Tree from "react-d3-tree";
 import { buildCombinedTree } from "../utils/transformToTreeData"; // ✅ Correct import
-
-import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import { useTranslation } from "react-i18next";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 
 const CombinedTreeGraphPage = () => {
   const { personId } = useParams();
-console.log("PersonID from URL:", personId); // 👈 log this
+  console.log("PersonID from URL:", personId); // 👈 log this
 
   const { i18n, t } = useTranslation();
   const [treeData, setTreeData] = useState(null);
+  const [peopleData, setPeopleData] = useState(null);
   const navigate = useNavigate();
 
-  let peopleData = deokuliAnerieyePeopleData_en;
-  if (i18n.language === "hi" || i18n.language === "mai"|| i18n.language === "kaithi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  }
-
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
 
   useEffect(() => {
-  if (!personId || !peopleData) return;
+    if (!personId || !peopleData) return;
 
-  const selectedPerson = peopleData.find((p) => {
+    const selectedPerson = peopleData.find((p) => {
     const match = String(p.PersonID) === String(personId);
     if (match) console.log("Matched person:", p);
     return match;
@@ -39,8 +44,11 @@ console.log("PersonID from URL:", personId); // 👈 log this
   console.log("Generated Tree Structure:", tree);
 
   setTreeData(tree);
-}, [personId, i18n.language]);
+}, [personId, peopleData]);
 
+  if (!peopleData) {
+    return <div>{t("loading", "Loading...")}</div>;
+  }
 
   return (
 

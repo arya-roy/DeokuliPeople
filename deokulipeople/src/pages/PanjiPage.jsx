@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
 import { calculatePanji } from "../utils/calculatePanji";
 import { useTranslation } from "react-i18next";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 const PanjiPage = () => {
   const { personId } = useParams();
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
+  const [peopleData, setPeopleData] = useState(null);
 
-    let peopleData = deokuliAnerieyePeopleData_en;
-  if (i18n.language === "hi" || i18n.language === "mai"|| i18n.language === "kaithi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
+
+  if (!peopleData) {
+    return <div>{t("loading", "Loading...")}</div>;
   }
 
   const panjiData = calculatePanji(personId, peopleData);

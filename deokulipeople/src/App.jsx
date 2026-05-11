@@ -1,26 +1,23 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { useTranslation } from "react-i18next";
 import "./i18n/i18n.js";
-import peopleData from "./data/people.json";
-import deokuliAnerieyePeopleDataEnglish from "./i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleDataHindi from "./i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import PeopleList from "./pages/PeopleList";
-import TreeView from "./pages/TreeView";
-import PersonDetail from "./pages/PersonDetail";
-import GroupDetailPage from "./pages/GroupDetailPage.jsx";
-import GroupSummary from "./pages/GroupSummary";
-import GroupPeopleList from "./pages/GroupPeopleList.jsx";
-import GroupSummaryTable from "./pages/GroupSummaryTable.jsx";
-import AncestorTreePage from "./pages/AncestorTreePage";
-import DescendantTreePage from "./pages/DescendantTreePage";
-import DescendantsStatsPage from "./pages/DescendantsStatsPage";
-import CombinedTreePage from "./pages/CombinedTreePage";
-import CombinedTreeGraphPage from "./pages/CombinedTreeGraphPage";
-import PanjiPage from "./pages/PanjiPage"; // ✅ Import this
-import PanjiPage1 from "./pages/PanjiPage1"; // ✅ Import this
+
+const Home = lazy(() => import("./pages/Home"));
+const PeopleList = lazy(() => import("./pages/PeopleList"));
+const TreeView = lazy(() => import("./pages/TreeView"));
+const PersonDetail = lazy(() => import("./pages/PersonDetail"));
+const GroupDetailPage = lazy(() => import("./pages/GroupDetailPage.jsx"));
+const GroupSummary = lazy(() => import("./pages/GroupSummary"));
+const GroupPeopleList = lazy(() => import("./pages/GroupPeopleList.jsx"));
+const GroupSummaryTable = lazy(() => import("./pages/GroupSummaryTable.jsx"));
+const AncestorTreePage = lazy(() => import("./pages/AncestorTreePage"));
+const DescendantTreePage = lazy(() => import("./pages/DescendantTreePage"));
+const DescendantsStatsPage = lazy(() => import("./pages/DescendantsStatsPage"));
+const CombinedTreePage = lazy(() => import("./pages/CombinedTreePage"));
+const CombinedTreeGraphPage = lazy(() => import("./pages/CombinedTreeGraphPage"));
+const PanjiPage = lazy(() => import("./pages/PanjiPage"));
+const PanjiPage1 = lazy(() => import("./pages/PanjiPage1"));
 
 
 
@@ -48,8 +45,9 @@ function App() {
           </select>
 
         </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
         <Route path="/list" element={<PeopleList />} />
         <Route path="/tree" element={<TreeView />} />
         <Route path="/person/:id" element={<PersonDetail />} />
@@ -72,6 +70,7 @@ function App() {
 
 
         </Routes>
+        </Suspense>
       </div>
     </Router>
   );

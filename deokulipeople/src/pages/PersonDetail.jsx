@@ -1,26 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
-
-import deokuliAnerieyePeopleData_en from "../i18n/locales/en/Deokuli_A_All.json";
-import deokuliAnerieyePeopleData_hi from "../i18n/locales/hi/DeokuliAneriyeAll_hi.json";
-//import deokuliAnerieyePeopleData_kaithi from "../i18n/locales/kaithi/DeokuliAneriyeAll_kaithi.json";
-
+import React, { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { loadPeopleData } from "../utils/loadPeopleData";
 
 const PersonDetail = () => {
   const { t, i18n } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
+  const [peopleData, setPeopleData] = useState(null);
 
-  // Choose dataset based on selected language
-  let peopleData = deokuliAnerieyePeopleData_en;
-  if (i18n.language === "hi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  } else if (i18n.language === "kaithi") {
-    peopleData = deokuliAnerieyePeopleData_hi;
-  } else if (i18n.language === "mai") {
-    peopleData = deokuliAnerieyePeopleData_hi; // fallback to Hindi for Maithili
+  useEffect(() => {
+    let active = true;
+    loadPeopleData(i18n.language).then((data) => {
+      if (active) {
+        setPeopleData(data || []);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [i18n.language]);
+
+  if (!peopleData) {
+    return <div>{t("loading", "Loading...")}</div>;
   }
 
   const person = peopleData.find((p) => String(p.PersonID) === id);
